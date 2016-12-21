@@ -27,9 +27,9 @@ class HuffmanTree(object):
         self._root = None
         self._decode_code = {}
         if message is not None:
-            self.huffman_by_message()
+            self.build_by_message()
 
-    def huffman_by_message(self, message=None):
+    def build_by_message(self, message=None):
         self._message = self._message if self._message else message
         if not self._message:
             raise Exception("The message should be set")
@@ -37,7 +37,7 @@ class HuffmanTree(object):
         self._create_tree()
         self._create_huffman_code()
 
-    def huffman_by_weight(self, weight_dict: OrderedDict):
+    def build_by_weight(self, weight_dict: OrderedDict):
         """
         Why OrderedDict ?
         Because when weight is the same ,the huffman_code may has different result which may affect the order
@@ -291,6 +291,6 @@ if __name__ == '__main__':
     ])
 
     # huffman.huffman_by_message("abacda")
-    huffman.huffman_by_weight(weight_dict)
+    huffman.build_by_weight(weight_dict)
     print(huffman.encode("abacda"))
     print(huffman.decode("01100111100"))

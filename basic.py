@@ -92,7 +92,7 @@ class Link:
 
         self._size += 1
 
-    def add_after(self, data):
+    def add_tail(self, data):
         temp = Node()
         temp.data = data
 
@@ -224,7 +224,7 @@ if __name__ == '__main__':
     print(mylist.search(93))
     print(mylist.search(100))
 
-    mylist.add_after(100)
+    mylist.add_tail(100)
     mylist.print_link()
     print(mylist.search(100))
     print(mylist.size())
